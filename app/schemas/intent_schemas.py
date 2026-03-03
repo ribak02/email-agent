@@ -32,21 +32,21 @@ class FormattedResponse(BaseModel):
     action_summary: Optional[str] = None
 
 
-# PydanticAI agents - these make structured calls to Claude
+# PydanticAI agents - these make structured calls to OpenAI
 intent_agent = Agent(
-    "anthropic:claude-sonnet-4-6",
+    "openai:gpt-4o",
     result_type=IntentResult,
     system_prompt=INTENT_SYSTEM_PROMPT,
 )
 
 organize_agent = Agent(
-    "anthropic:claude-sonnet-4-6",
+    "openai:gpt-4o",
     result_type=OrganizeResult,
     system_prompt=EMAIL_ANALYSIS_SYSTEM_PROMPT,
 )
 
 response_agent = Agent(
-    "anthropic:claude-sonnet-4-6",
+    "openai:gpt-4o",
     result_type=FormattedResponse,
     system_prompt=(
         "Format a clear, friendly WhatsApp reply summarizing what was done. "

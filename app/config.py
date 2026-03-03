@@ -4,8 +4,8 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 
-    # Anthropic
-    anthropic_api_key: str
+    # OpenAI
+    openai_api_key: str
 
     # Microsoft Azure / Graph
     azure_client_id: str
